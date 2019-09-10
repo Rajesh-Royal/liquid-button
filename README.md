@@ -1,4 +1,17 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TO use the LIquid button in your project - 
+1. - npm install liquid-button
+2. - Then Import liquid-button in your react project 
+
+    import LiquidButton from 'LiquidButton'
+
+3. - use ` <LiquidButton name="FirstButton" background="black" firstcolor="#1e88e5" secondcolor="yellow" /> `
+     -------- put your desired colors -----
+
+     That's It // Currently You can't use more than one button on one page I will update this soon
+
+     Feel free to contribute on github - 
+
+## This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

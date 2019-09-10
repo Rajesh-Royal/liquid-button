@@ -1,7 +1,7 @@
 {
   "name": "liquid-button",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.2",
+  "private": false,
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",

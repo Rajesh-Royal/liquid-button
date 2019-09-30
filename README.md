@@ -2,16 +2,16 @@ TO use the LIquid button in your project -
 1. - npm install liquid-button
 2. - Then Import liquid-button in your react project 
 
-    import LiquidButton from 'LiquidButton' if generate error then copy the LiquidButton.js file from the node_moudle folder and paste inside your src folder and import as `import LiquidButton from './LiquidButton' `
+    `import LiquidButton from 'LiquidButton/src/LiquidButton'` if generate error then copy the LiquidButton.js file from the node_moudle folder and paste inside your src folder and import as `import LiquidButton from './LiquidButton' `
 
 3. - use ` <LiquidButton class="your-class-name-here" name="FirstButton" background="black" firstcolor="#1e88e5" secondcolor="yellow" /> `
      -------- put your desired colors -----
 
      #### You should have different class name each time you are using the component like - 
-     `ReactDOM.render(<div>
-     <LiquidButton class="liquid-button" name="FirstButton" background="black" firstcolor="#1e88e5" secondcolor="yellow" />
-     <LiquidButton class="liquid-button2" name="FirstButton" background="black" firstcolor="#1e88e5" secondcolor="yellow" />
-     </div>, document.getElementById('root'));`
+     `ReactDOM.render(<div>`
+     `<LiquidButton class="liquid-button" name="FirstButton" background="black" firstcolor="#1e88e5" secondcolor="yellow" />`
+     `<LiquidButton class="liquid-button2" name="FirstButton" background="black" firstcolor="#1e88e5" secondcolor="yellow" />`
+     `</div>, document.getElementById('root'));`
 
      see the above example it will show 2 buttons if you want to use more than your class name should be different each time.
 

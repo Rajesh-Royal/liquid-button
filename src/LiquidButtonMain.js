@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class LiquidButton extends Component {
+class LiquidButtonMain extends Component {
 
 
     render() {
@@ -383,4 +383,4 @@ class LiquidButton extends Component {
       }
     }
     
-    export default LiquidButton;
+    export default LiquidButtonMain;

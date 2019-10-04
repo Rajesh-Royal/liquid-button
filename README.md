@@ -1,4 +1,4 @@
-## Demo - `https://rajesh-royal.github.io/liquid-button/build/`
+## Demo - https://rajesh-royal.github.io/liquid-button/build/
 
 TO use the LIquid button in your project - 
 1. - npm install liquid-button

@@ -2,6 +2,19 @@
   "name": "liquid-button",
   "version": "0.1.7",
   "private": false,
+  "description": "A Liquid button built with vanila JS and svg",
+   "homepage": "https://github.com/Rajesh-Royal/liquid-button",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/Rajesh-Royal/liquid-button.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "liquid-button",
+    "fancy button",
+    "button",
+    "liquid"
+],
   "dependencies": {
     "react": "^16.13.0",
     "react-dom": "^16.13.0",

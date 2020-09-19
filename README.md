@@ -1,6 +1,6 @@
-<p align="center"><a href="https://github.com/Rajesh-Royal/liquid-button"><img src="screenshot/liquid button.gif" alt="Liquid button preview" height="60"/></a></p>
+<p align="center"><a href="https://github.com/Rajesh-Royal/liquid-button"><img src="screenshot/liquid button.gif" alt="Liquid button preview" height="150"/></a></p>
 <h1 align="center">Liquid Button</h1>
-<p align="center">A Liquid effect button built uisng svg and vanila JS, <a href="">NPM Repository</a></p>
+<p align="center">A Liquid effect button built uisng svg and vanila JS, <a href="https://www.npmjs.com/package/liquid-button">NPM Repository</a></p>
 
 <p align="center">
     <a href="https://twitter.com/intent/tweet?text=A Liquid effect button built uisng svg and vanila JS.&url=https://github.com/Rajesh-Royal/liquid-button&hashtags=javascript,opensource,js,webdev,developers,npm"><img src="http://randojs.com/images/tweetShield.svg" alt="Tweet" height="30"/></a>

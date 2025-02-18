@@ -8,6 +8,9 @@
 
 ## Demo - https://rajesh-royal.github.io/liquid-button/build/
 
+[Screencast from 2025-02-18 16-51-01.webm](https://github.com/user-attachments/assets/c3393081-b8bf-4d93-a14a-c864282607f2)
+
+
 TO use the LIquid button in your project -
 1. - npm install liquid-button
 2. - Then Import liquid-button in your react project

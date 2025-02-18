@@ -80,13 +80,13 @@ class LiquidButtonClass {
     for (let layerIndex = 0; layerIndex < this.layers.length; layerIndex++) {
       const layer = this.layers[layerIndex];
       layer.viscosity =
-        parseFloat(options["layer-" + (layerIndex + 1) + "Viscosity"]) * 1 ||
+        parseFloat(options["layer-" + (layerIndex + 1) + "Viscosity"] as string) * 1 ||
         layer.viscosity;
       layer.mouseForce =
-        parseFloat(options["layer-" + (layerIndex + 1) + "MouseForce"]) * 1 ||
+        parseFloat(options["layer-" + (layerIndex + 1) + "MouseForce"] as string) * 1 ||
         layer.mouseForce;
       layer.forceLimit =
-        parseFloat(options["layer-" + (layerIndex + 1) + "ForceLimit"]) * 1 ||
+        parseFloat(options["layer-" + (layerIndex + 1) + "ForceLimit"] as string) * 1 ||
         layer.forceLimit;
       layer.path = document.createElementNS(this.xmlns, "path") as SVGPathElement;
       this.svg.appendChild(layer.path);
@@ -165,8 +165,9 @@ class LiquidButtonClass {
       this.__raf || (
         this.__raf = (
           window.requestAnimationFrame,
-          function (callback: () => void) {
+          function (callback: FrameRequestCallback) {
             setTimeout(callback, 10);
+            return 0;
           }).bind(window)));
   }
 
@@ -288,13 +289,13 @@ class LiquidButtonClass {
             gradient.setAttribute("cx", String(touch.x / this.svgWidth));
             gradient.setAttribute("cy", String(touch.y / this.svgHeight));
             gradient.setAttribute("r", String(touch.force));
-            layer.path.style.fill = "url(#" + gradient.id + ")";
+            layer.path!.style.fill = "url(#" + gradient.id + ")";
           }
         } else {
-          layer.path.style.fill = this.color2;
+          layer.path!.style.fill = this.color2;
         }
       } else {
-        layer.path.style.fill = this.color1;
+        layer.path!.style.fill = this.color1;
       }
       const points = layer.points;
       const commands = [];
@@ -302,16 +303,16 @@ class LiquidButtonClass {
       for (let pointIndex = 1; pointIndex < points.length; pointIndex += 1) {
         commands.push(
           "C",
-          points[(pointIndex + 0) % points.length].cNext.x,
-          points[(pointIndex + 0) % points.length].cNext.y,
-          points[(pointIndex + 1) % points.length].cPrev.x,
-          points[(pointIndex + 1) % points.length].cPrev.y,
+          points[(pointIndex + 0) % points.length].cNext?.x,
+          points[(pointIndex + 0) % points.length].cNext?.y,
+          points[(pointIndex + 1) % points.length].cPrev?.x,
+          points[(pointIndex + 1) % points.length].cPrev?.y,
           points[(pointIndex + 1) % points.length].x,
           points[(pointIndex + 1) % points.length].y);
 
       }
       commands.push("Z");
-      layer.path.setAttribute("d", commands.join(" "));
+      layer.path!.setAttribute("d", commands.join(" "));
     }
     this.svgText.textContent = this.text;
     this.svgText.style.fill = this.textColor;
@@ -375,9 +376,10 @@ class LiquidButtonClass {
 };
 
 interface LiquidButtonProps {
+  label: string;
+  className?: string;
   width?: number;
   height?: number;
-  label?: string;
   backgroundColor?: string;
   primaryColor?: string;
   secondaryColor?: string;
@@ -391,12 +393,13 @@ interface LiquidButtonProps {
 }
 
 const LiquidButton: React.FC<LiquidButtonProps> = ({
+  className = '',
   width = 200,
   height = 50,
-  label = "Liquid Button",
-  backgroundColor = "black",
-  primaryColor = "#1e88e5",
-  secondaryColor = "yellow",
+  label = "Hover me!",
+  backgroundColor = "#ff6cb1",
+  primaryColor = "#00d9ff",
+  secondaryColor = "#ff9034",
   forceFactor = 0.1,
   layerOneViscosity = 0.5,
   layerTwoViscosity = 0.4,
@@ -412,7 +415,7 @@ const LiquidButton: React.FC<LiquidButtonProps> = ({
     const svgElementCopy = svgRef.current;
 
     const button = new LiquidButtonClass(svgRef.current);
-
+    
     return () => {
       if (button) {
         document.body.removeEventListener("touchstart", button.touchHandler);
@@ -425,7 +428,7 @@ const LiquidButton: React.FC<LiquidButtonProps> = ({
     };
   }, [width, height, label, backgroundColor, secondaryColor, primaryColor]);
 
-  return <svg
+  return <svg className={className}
     ref={svgRef}
     data-width={width}
     data-height={height}
